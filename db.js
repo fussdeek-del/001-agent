@@ -122,8 +122,3 @@ class SlackAIAgent {
             log.error(`Error during basic research for ${member.name}:`, error.message);
             return Promise.resolve({ memberId: member.id, error: error.message });
         }
-    }
-
-}   async doBasicreserch() {
-        
-}
