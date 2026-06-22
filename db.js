@@ -122,3 +122,17 @@ class SlackAIAgent {
             log.error(`Error during basic research for ${member.name}:`, error.message);
             return Promise.resolve({ memberId: member.id, error: error.message });
         }
+
+print('Basic research completed for', member.name); 
+    ]}
+
+    async analyzeAndPostMember(member) {
+        try {
+            const researchData = await this.doBasicResearch(member);
+            const prompt = ChatPromptTemplate.fromTemplate(`
+                You are a helpful assistant that analyzes new Slack members based on their profile information.
+                Here is the member's information:
+                Name: {name}
+                Profile: {profile}
+                What insights can you provide about this member? 
+            `);
