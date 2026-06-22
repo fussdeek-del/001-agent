@@ -136,3 +136,5 @@ print('Basic research completed for', member.name);
                 Profile: {profile}
                 What insights can you provide about this member? 
             `);
+
+print()
