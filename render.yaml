@@ -4,11 +4,6 @@ services:
     name: slack-ai-agent
     env: node
     plan: free 
-# render.yaml
-services:
-  - type: web
-    name: slack-ai-agent
-    env: node
-    plan: free 
     buildCommand: npm install
     startCommand: npm start
+    envVars:
